@@ -19,12 +19,10 @@ class Solution {
             if ( userNum == 0 ) failure.put(i,0.0);
             else {
                 failure.put(i, (count / userNum));
-                System.out.printf("%s,%s \n", i, (count / userNum));
                 userNum = userNum - count;
                 count = 0;
             }
         }
-
         List<Map.Entry<Integer, Double>> list = new ArrayList<>(failure.entrySet());
         list.sort((i, rate) -> rate.getValue().compareTo(i.getValue()));
 
@@ -35,9 +33,3 @@ class Solution {
         return answer;
     }
 }
-//1,1,1,2,3,4 5
-// N = 스테이지의수
-// stages = 사용자들의 해당스테이지 배열
-// stages.length = 사용자의수
-// stages[i] = 사용자의 현재 스테이지
-// 1 <= stages[i] <= N+1

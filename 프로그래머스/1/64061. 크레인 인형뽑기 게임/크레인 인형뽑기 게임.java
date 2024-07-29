@@ -33,7 +33,9 @@ class Solution {
         int count = 0;
 
         for (int i : list) {
-            if (!stack.isEmpty() && stack.peek().equals(i) && i != 0) {
+            if (i == 0) continue;
+            
+            if (!stack.isEmpty() && stack.peek().equals(i)) {
                 stack.pop();
                 count += 2;
             } else {

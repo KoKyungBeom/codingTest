@@ -19,7 +19,7 @@ class Solution {
 
         return answer.stream()
                      .sorted()
-                     .mapToInt(Integer::intValue)
+                     .mapToInt(el -> el)
                      .toArray();
     }
     public static int[] makeArray1(int n) {
@@ -53,11 +53,13 @@ class Solution {
     }
     public static int countMatches(int[] arr1, int[] arr2) {
         int count = 0;
+        
         for (int i = 0; i < arr1.length; i++) {
             if (arr1[i] == arr2[i]) {
                 count++;
             }
         }
+        
         return count;
     }
 }

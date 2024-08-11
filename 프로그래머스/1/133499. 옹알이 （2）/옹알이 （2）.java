@@ -5,32 +5,29 @@ class Solution {
         String[] str = {"aya", "ye", "woo", "ma"};
 
         for (String s : babbling) {
-            String previous = "";
+            String previousWord = "";
             boolean isValid = true;
 
             while (!s.isEmpty()) {
-                boolean found = false;
+                boolean changed = false;
 
                 for (String el : str) {
                     if (s.startsWith(el)) {
-                        if (previous.equals(el)) {
+                        if (previousWord.equals(el)) {
                             isValid = false;
                             break;
                         }
-
                         s = s.substring(el.length());
-                        previous = el;
-                        found = true;
+                        previousWord = el;
+                        changed = true;
                         break;
                     }
                 }
-
-                if (!found) {
+                if (!changed) {
                     isValid = false;
                     break;
                 }
             }
-
             if (isValid) {
                 answer++;
             }

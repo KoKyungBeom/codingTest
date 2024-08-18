@@ -12,6 +12,7 @@ class Solution {
     List<Character> answerChar = new ArrayList<>();
     
     boolean[] skipCheck = new boolean[26];
+        
     for (char ch : skipChar) {
         skipCheck[ch - 'a'] = true;
     }

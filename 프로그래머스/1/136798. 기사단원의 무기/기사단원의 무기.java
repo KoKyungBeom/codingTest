@@ -25,7 +25,7 @@ class Solution {
             if (i * i == num) {
                 result ++;
             } 
-            else if(num  % i == 0) {
+            else if(num % i == 0) {
                 result += 2;
             }
         }
